@@ -1,0 +1,57 @@
+/* footer.css */
+
+footer {
+  background: linear-gradient(90deg, #1A1A1A 0%, #333 50%, #1A1A1A 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  border-top: 2px solid #FFEB3B;
+  position: relative;
+  z-index: 2;
+}
+
+footer a {
+  color: #FFEB3B;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+footer a:hover {
+  background: rgba(255, 235, 59, 0.2);
+  text-shadow: 0 0 8px #FFEB3B;
+  transform: scale(1.05);
+  display: inline-block;
+}
+
+footer .contato {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .contato p {
+  margin: 5px;
+  padding: 8px 12px;
+  background: rgba(255, 235, 59, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 235, 59, 0.3);
+  transition: all 0.3s ease;
+}
+
+footer .contato p:hover {
+  background: rgba(255, 235, 59, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsividade Footer */
+@media (max-width: 768px) {
+  footer .contato {
+    flex-direction: column;
+    align-items: center;
+  }
+}
