@@ -1,7 +1,7 @@
 import React from 'react';
 import mainLogo from '../assets/logo_catalumari_web.png';
 
-function Home() {
+function Sobre() {
   return (
     <section id="inicio">
       <div className="container">
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Sobre;

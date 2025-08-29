@@ -1,35 +1,52 @@
+// src/components/Header.js 
 import React from 'react';
-import logo from '../assets/catalumari_lateral.png'; 
+import { Link } from 'react-router-dom';
+import logo from '../assets/catalumari_lateral.png';
 
 function Header() {
+
+
+  const handleScrollToContact = (event) => {
+    event.preventDefault();
+    const contactSection = document.getElementById('contato');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <header>
-      <div className="logo-area"> 
-        <img src={logo} alt="Logo do cabeçalho" />
+      <div className="logo-area">
+        <Link to="/">
+          <img src={logo} alt="Logo do cabeçalho" />
+        </Link>
       </div>
       <div>
         <nav>
           <ul>
-            <li><a href="/">Início</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-            
+            <li><Link to="/">Início</Link></li>
+            <li><Link to="/sobre">Sobre</Link></li>
+
             <li className="has-dropdown">
-              <a href="/espetaculos">Espetáculos</a>
+              <Link to="/espetaculos">Espetáculos</Link>
               <div className="dropdown">
-                <a href="/espetaculos/tatu-do-bem">Tatu-do-Bem</a>
+                <Link to="/espetaculos/tatu-do-bem">Tatu-do-Bem</Link>
               </div>
             </li>
-            
+
             <li className="has-dropdown">
-              <a href="/grupo">Grupo</a>
+              <Link to="/grupo">Grupo</Link>
               <div className="dropdown">
-                <a href="/grupo/alice-boa-hora">Alice Bôa Hora</a>
-                <a href="/grupo/alvaro-de-farias">Álvaro de Farias</a>
-                {/* Adicione os outros membros aqui */}
+                <Link to="/grupo/alice-boa-hora">Alice Bôa Hora</Link>
+                <Link to="/grupo/alvaro-de-farias">Álvaro de Farias</Link>
               </div>
             </li>
-            
-            <li><a href="#contato">Contato</a></li>
+
+            <li>
+              <a href="#contato" onClick={handleScrollToContact}>
+                Contato
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
